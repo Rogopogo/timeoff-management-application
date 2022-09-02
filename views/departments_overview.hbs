@@ -1,14 +1,14 @@
 
 {{> header }}
 
-<h1>Departments</h1>
+<h1>Отделы</h1>
 
 {{> show_flash_messages }}
 
 <div class="row">
-  <div class="col-md-4 lead">All departments</div>
+  <div class="col-md-4 lead">Все отделы</div>
   <div class="col-md-4 col-md-offset-4">
-    <button class="btn btn-info pull-right" data-toggle="modal" data-target="#add_new_department_modal" type="button" id="add_new_department_btn">Add new department</button>
+    <button class="btn btn-info pull-right" data-toggle="modal" data-target="#add_new_department_modal" type="button" id="add_new_department_btn">Добавить новый отдел</button>
   </div>
 </div>
 
@@ -18,7 +18,7 @@
 
 {{# unless departments.length }}
 <div class="row">
-    <div class="col-md-4">No department records</div>
+    <div class="col-md-4">Никаких записей отдела</div>
 </div>
 {{/unless}}
 
@@ -28,11 +28,11 @@
     <table class="table table-hover">
       <thead>
         <tr>
-          <th>Name</th>
-          <th>Manager</th>
-          <th>Allowance</th>
-          <th>Number Employees</th>
-          <th>Public Holidays
+          <th>Название</th>
+          <th>Менеджер</th>
+          <th>Пособие</th>
+          <th>Количество сотрудников</th>
+          <th>Государственные праздники
             <button type="button"
               class="btn btn-xs btn-link"
               data-content="If set to YES, employees from department have Bank Holidays added on top of their allowance"
@@ -43,7 +43,7 @@
               <span class="fa fa-question-circle"> </span>
             </button>
           </th>
-          <th>Accrued Allowance
+          <th>Начисленное пособие
             <button type="button"
               class="btn btn-xs btn-link"
               data-content="If set to YES, holiday allowance starts to build up - or accrue - from the first day of employment. It accrues in proportion to the annual entitlement. E.g. an employee in the ninth month of employment would have built up 9/12ths (or three-quarters) of annual entitlement."
@@ -66,8 +66,8 @@
             {{#each ../allowance_options}}{{#if_equal this.value ../allowance}}{{caption}}{{/if_equal}}{{/each}}
           </td>
           <td><a href="/users/?department={{ this.id }}">{{this.users.length}}</a></td>
-          <td>{{# if this.include_public_holidays }}Yes{{/if}}</td>
-          <td>{{# if this.is_accrued_allowance }}Yes{{/if}}</td>
+          <td>{{# if this.include_public_holidays }}Да{{/if}}</td>
+          <td>{{# if this.is_accrued_allowance }}Да{{/if}}</td>
           <td><a href="/settings/departments/edit/{{this.id}}/" class="btn btn-link btn-xs pull-right"><span class="fa fa-chevron-right"></span></a></td>
         </tr>
         {{/each}}

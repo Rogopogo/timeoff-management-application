@@ -1,18 +1,18 @@
 
 <div>
-  <strong>Name:</strong> {{userFullName}}.
+  <strong>Имя:</strong> {{userFullName}}.
 </div>
 <div>
-  <strong>Department:</strong> {{departmentName}}.
+  <strong>Отдел:</strong> {{departmentName}}.
 </div>
 {{#if userAllowance }}
   <div>
-    <strong>Available:</strong> {{userAllowance.number_of_days_available_in_allowance}} days out of {{userAllowance.total_number_of_days_in_allowance}}.
+    <strong>Доступно:</strong> {{userAllowance.number_of_days_available_in_allowance}} дней из {{userAllowance.total_number_of_days_in_allowance}}.
   </div>
 {{/if}}
 {{#if supervisorNames}}
   <div>
-    <strong>Approvers:</strong>
+    <strong>Утверждающие:</strong>
     <ul>
       {{#each supervisorNames}}<li>{{this}}{{#unless @last}},{{/unless}}</li>{{/each}}
     </ul>
